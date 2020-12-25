@@ -115,7 +115,7 @@ print("Part 1 using regex: {} valid messages. Verification time {:.2f}s".format(
 
 # Part 2
 # Instead of an infinite loop, generate some more options for rules 8 and 11.
-# The upper value of the range() is set by 
+# The upper value of the range() is set so that the result doesn't change when increasing this value. It could probably also be set by looking at the longest message..
 for i in range(2, 10):
     rules[8].append([42] * i)
 
