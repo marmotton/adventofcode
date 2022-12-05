@@ -1,4 +1,5 @@
 import re
+from copy import deepcopy
 
 with open('input') as input:
     # How many stacks ? (\n is also included in length)
@@ -10,16 +11,19 @@ with open('input') as input:
     input.seek(0)
     for line in input:
 
-        if line[1] == '1':
+        if line[1] == '1' and line[0] != '[':  # for trying with input2.txt
             break
 
         for i in range(0, n_stacks):
             col = 4 * i + 1
             if line[col] != ' ':
                 initial_stacks[i].insert(0, line[col])
+        
+        print(initial_stacks)
+        print()
 
-    stacks_pt1 = [ x.copy() for x in initial_stacks]
-    stacks_pt2 = [ x.copy() for x in initial_stacks]
+    stacks_pt1 = deepcopy(initial_stacks)
+    stacks_pt2 = deepcopy(initial_stacks)
 
     # Move the crates
     for line in input:
