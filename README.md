@@ -1,3 +1,3 @@
 # Advent of Code
 
-Puzzle solutions for [advent of code](https://adventofcode.com) 2020.
+Puzzle solutions for [advent of code](https://adventofcode.com).
