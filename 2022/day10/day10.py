@@ -1,3 +1,5 @@
+import time
+
 reg = 1
 cycle = 1
 signal_strength_sum = 0
@@ -16,7 +18,7 @@ def process():
     row = (cycle - 1) // len(image[0])
     
     if reg -1 <= col <= reg + 1:
-        image[row] = "{}#{}".format( image[row][:col], image[row][col + 1:] )
+        image[row] = "{}▒{}".format( image[row][:col], image[row][col + 1:] )
 
 with open('input') as input:
     for line in input:
@@ -35,6 +37,10 @@ with open('input') as input:
 
     print("Part 1: {}".format(signal_strength_sum))
 
+    # Part 2 animated
     print("Part 2:")
     for row in image:
-        print(row)
+        for c in row:
+            print(c, end='', flush=True)
+            time.sleep(0.02)
+        print()
